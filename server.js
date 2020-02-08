@@ -27,6 +27,15 @@ app.get("/api/tables", function(req, res) {
 
 app.get("/add", function(req, res) {
     res.sendfile(path.join(__dirname, "reserve.html"))
+});
+
+app.post("/api/tables", function(req, res) {
+    var newTable = req.body;
+    newTable.routeName = newTable.name.replace(/\s+/g, "").toLowerCase();
+
+    console.log(newCharacter);
+
+    res.json(newCharacter)
 })
 
 
